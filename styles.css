@@ -147,7 +147,8 @@ dialog::backdrop { background: #080a0db0; }
 @media (max-width: 620px) {
   .topbar { gap: 8px; padding-inline: 10px; }
   .top-actions { gap: 5px; }
-  .top-actions button { padding-inline: 7px; font-size: 11px; }
+  .top-actions button { padding-inline: 7px; font-size: 11px; white-space: nowrap; }
+  .search kbd { display: none; }
   .top-actions svg { width: 14px; height: 14px; }
   .brand { gap: 7px; font-size: 13px; }
   .brand-mark { width: 29px; height: 29px; }
@@ -163,14 +164,18 @@ dialog::backdrop { background: #080a0db0; }
   .search { margin: 17px 0; }
   .badge-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 143px), 1fr)); gap: 8px; }
 }
+@media (max-width: 365px) {
+  .brand small, .top-actions button:not(#theme) svg { display: none; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 
-.badge-card { min-width: 0; width: 100%; display: grid; gap: 0; padding: 7px; text-align: left; border-radius: 9px; }
+.badge-card { min-width: 0; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding: 7px; text-align: left; border-radius: 9px; }
 .badge-card:hover { border-color: color-mix(in srgb, var(--accent) 42%, var(--border)); }
 .badge-card[aria-pressed="true"] { border-color: color-mix(in srgb, var(--accent) 53%, var(--border)); background: var(--accent-bg); }
 .badge-art { display: grid; place-items: center; padding: 8px; width: 100%; min-width: 0; min-height: 53px; background: var(--badge-surface); border: 1px solid var(--border); border-radius: 5px; }
-.badge-image { display: inline-flex; align-items: center; max-width: 100%; min-width: 0; vertical-align: middle; }
+.badge-image { position: relative; display: inline-flex; align-items: center; max-width: 100%; min-width: 0; vertical-align: middle; }
 .badge-image img { display: block; max-width: 100%; height: auto; max-height: 29px; object-fit: contain; }
+.badge-image img:not([data-ready]) { position: absolute; inset: 0; visibility: hidden; }
 .badge-fallback { display: inline-flex; align-items: center; gap: 5px; max-width: 100%; min-height: 20px; padding: 2px 6px; border-radius: 3px; color: white; text-shadow: 0 1px 2px #000, 0 0 3px #000b; font: 11px Verdana, sans-serif; }
 .badge-fallback > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .badge-fallback.style-for-the-badge { min-height: 28px; padding-inline: 8px; border-radius: 0; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: .07em; }

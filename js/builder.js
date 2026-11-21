@@ -135,11 +135,19 @@ export function setupBuilder({ getProject, lookup, update, confirm, editBadge, s
     input.maxLength = 80;
     input.dataset.focus = `${group.id}-name`;
     input.setAttribute('aria-label', `Rename category ${group.name}`);
+    input.addEventListener('input', () => {
+      if (!input.value.trim()) return;
+      group.name = input.value.trim();
+      update({ previewOnly: true });
+    });
     input.addEventListener('change', () => {
       const name = input.value.trim();
       group.name = name || group.name;
       input.value = group.name;
       input.setAttribute('aria-label', `Rename category ${group.name}`);
+      up.setAttribute('aria-label', `Move category ${group.name} up`);
+      down.setAttribute('aria-label', `Move category ${group.name} down`);
+      remove.setAttribute('aria-label', `Remove category ${group.name}`);
       update({ previewOnly: true });
     });
     input.addEventListener('keydown', (event) => {

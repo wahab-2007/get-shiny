@@ -107,13 +107,13 @@ export function badgeImage(badge, global, individual, decorative = false) {
     if (!available || !wrap.isConnected) return;
     const image = new Image();
     image.alt = '';
-    image.hidden = true;
     image.loading = 'lazy';
     image.decoding = 'async';
     image.addEventListener('load', () => {
       fallback.hidden = true;
-      image.hidden = false;
+      image.dataset.ready = 'true';
     }, { once: true });
+    image.addEventListener('error', () => image.remove(), { once: true });
     image.src = badgeUrl(badge, global, individual);
     wrap.append(image);
   });

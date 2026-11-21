@@ -7,7 +7,7 @@ import { generateMarkdown } from './markdown.js';
 import { PRESETS } from './presets.js';
 import { MAX_PROJECT_BYTES, parseProject, restoreProject, saveProject } from './storage.js';
 
-export const byId = (id) => document.getElementById(id);
+const byId = (id) => document.getElementById(id);
 
 const themeButton = document.querySelector('#theme');
 const workspace = document.querySelector('.workspace');
@@ -66,6 +66,7 @@ function confirmAction(title, message, confirm) {
   }, 'primary'));
   content.append(element('p', '', message), buttons);
   openDialog(title, content);
+  cancel.focus();
 }
 
 const notice = byId('notice');

@@ -10,7 +10,7 @@ function oneLine(text) {
 function escapeMarkdown(text) {
   return oneLine(text)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replace(/[\\[]`*_~#!]/g, '\\$&');
+    .replace(/[\\\[\]()*_~#!\x60]/g, '\\$&');
 }
 
 function escapeHtml(text) {
