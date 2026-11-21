@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101216">
+  <meta name="description" content="Browse technology badges and build a badge collection for your GitHub README.">
+  <title>Badge Builder — GitHub README badges</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to badges</a>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="m12 2 8.5 5v10L12 22l-8.5-5V7zM3.5 7 12 12l8.5-5M12 12v10M7.75 4.5l8.5 5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></symbol>
+    <symbol id="i-term" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 8 4 4-4 4m7 0h5"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1-1-10 7 7 0 0 1 13 2 4 4 0 0 1-1 8z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M12 17v4m-5 0h10"/></symbol>
+    <symbol id="i-test" viewBox="0 0 24 24"><path d="M9 3h6m-5 0v7l-5 8a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-8V3m-6 12h8"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H5V3zm7 0v6h5m-10 4h6m-6 4h6"/></symbol>
+    <symbol id="i-design" viewBox="0 0 24 24"><path d="m12 2 10 10-10 10L2 12zm0 6 4 4-4 4-4-4z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13a9 9 0 1 1-10-10 8 8 0 0 0 10 10z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19m0-14-1.5 1.5m-11 11L5 19"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 4H6a2 2 0 0 0-2 2v10"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h7m4 0h5M4 12h3m4 0h9M4 18h10m4 0h2"/><circle cx="13" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></symbol>
+  </svg>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-brand"/></svg></span><span>Badge Builder<small>GITHUB README TOOL</small></span></a>
+    <div class="top-actions">
+      <button id="presets" type="button"><svg aria-hidden="true"><use href="#i-spark"/></svg> <span>Presets</span></button>
+      <button id="custom" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg> <span>Custom badge</span></button>
+      <span class="toolbar-divider"></span>
+      <button id="theme" class="icon-only" type="button" aria-label="Switch to light theme" title="Switch to light theme"><svg aria-hidden="true"><use href="#i-sun"/></svg></button>
+    </div>
+  </header>
+  <div class="mobile-nav" aria-label="Workspace view">
+    <button type="button" id="show-explorer" aria-pressed="true">Explore</button>
+    <button type="button" id="show-builder" aria-pressed="false">Builder <span id="mobile-count" class="pill">0</span></button>
+  </div>
+  <div class="workspace" data-mobile="explorer">
+    <aside class="sidebar" aria-label="Badge categories">
+      <h2>Categories</h2>
+      <nav id="categories" aria-label="Categories"></nav>
+      <div class="sidebar-credit">Catalogue by <a href="https://github.com/Ileriayo/markdown-badges">markdown-badges</a><br>Images by <a href="https://shields.io">Shields.io</a></div>
+    </aside>
+    <main id="explorer" tabindex="-1">
+      <div class="intro">
+        <h1>Badge Explorer</h1>
+        <p>Find badges for your stack and add them to your GitHub README.</p>
+      </div>
+      <label class="search" for="search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="search" type="search" placeholder="Search badges, technologies, or categories…" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+      <div class="results-header"><h2 id="results-heading">All Badges</h2><span id="results-count" class="muted" role="status"></span></div>
+      <div id="badge-grid" class="badge-grid"></div>
+      <button id="more" type="button" hidden>Load more badges</button>
+    </main>
+    <aside class="builder" id="builder" aria-labelledby="builder-title">
+      <div class="builder-heading"><div><h2 id="builder-title">README Builder <span id="selected-count" class="pill">0</span></h2><p class="muted">Your badge collection</p></div><button id="appearance" class="icon-only" type="button" aria-label="Appearance settings" title="Appearance settings"><svg aria-hidden="true"><use href="#i-sliders"/></svg></button></div>
+      <div id="selection"></div>
+      <div class="builder-tools"><button id="new-group" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg> Category</button><button id="clear" type="button" disabled>Clear all</button></div>
+      <section class="preview" aria-labelledby="preview-title">
+        <div class="preview-heading"><h3 id="preview-title">README preview</h3></div>
+        <div class="preview-tabs" aria-label="Preview mode">
+          <button type="button" id="visual-tab" aria-pressed="true"><svg aria-hidden="true"><use href="#i-eye"/></svg> Visual</button>
+          <button type="button" id="source-tab" aria-pressed="false"><svg aria-hidden="true"><use href="#i-code"/></svg> Markdown</button>
+        </div>
+        <div id="preview-content"></div>
+      </section>
+      <button id="copy" class="primary copy" type="button" disabled><svg aria-hidden="true"><use href="#i-copy"/></svg> Copy Markdown</button>
+      <div class="export-tools">
+        <button id="download" type="button" disabled><svg aria-hidden="true"><use href="#i-download"/></svg> Download</button>
+        <button id="project" type="button">More actions <svg aria-hidden="true"><use href="#i-down"/></svg></button>
+      </div>
+    </aside>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-title"><h2 id="dialog-title"></h2><button id="close-dialog" class="icon-only" type="button" aria-label="Close dialog"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div id="dialog-body"></div>
+  </dialog>
+  <div id="notice" class="notice" hidden><span id="notice-message" role="status"></span><button id="undo" type="button" hidden>Undo</button><button id="dismiss" class="icon-only" type="button" aria-label="Dismiss notification"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+</body>
+</html>
