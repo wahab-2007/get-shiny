@@ -38,3 +38,12 @@ document.addEventListener('keydown', (event) => {
     search.select();
   }
 });
+
+import { loadCatalog, setupExplorer } from './catalog.js';
+
+loadCatalog().then((catalogue) => {
+  setupExplorer(catalogue, () => [], () => false, () => {});
+}).catch((error) => {
+  document.querySelector('#results-count').textContent = 'Catalogue could not be loaded. Reload to try again.';
+  console.error(error);
+});
