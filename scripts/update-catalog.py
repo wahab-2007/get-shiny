@@ -37,14 +37,15 @@ ALIASES = {
     'javascript': ['js', 'ecmascript'], 'typescript': ['ts'], 'python': ['py', 'python3'],
     'node.js': ['nodejs', 'node'], 'react': ['reactjs', 'react.js'], 'vue.js': ['vue', 'vuejs'],
     'visual-studio-code': ['VS Code', 'Visual Studio Code', 'vscode'],
-    'postgresql': ['postgres', 'pgsql'], 'github-pages': ['gh pages'],
+    'postgres': ['PostgreSQL', 'pgsql'], 'arch': ['Arch Linux'], 'go-golang': ['golang'],
+    'tailwindcss': ['Tailwind CSS'], 'next-js': ['Next.js'], 'css': ['CSS3'], 'github-pages': ['gh pages'],
     'kde-plasma': ['kde', 'plasma'], 'jupyter-notebook': ['jupyter', 'ipynb'],
     'aws-lightsail': ['Amazon Lightsail', 'AWS'], 'linux-mint': ['mint'],
 }
-POPULAR = ('Python|JavaScript|TypeScript|React|Node.js|Docker|Git|GitHub|Java|C++|Rust|Go|'
-           'PostgreSQL|Linux|Visual Studio Code|HTML5|CSS3|Vue.js|Ubuntu|Kubernetes|'
-           'Markdown|Next.js|Tailwind CSS|Figma|MySQL|Redis|NumPy|Pandas|Vite|Django|'
-           'GitHub Actions|Spring|Arch Linux|SQLite|Blender|JSON').split('|')
+POPULAR = ('Python|JavaScript|TypeScript|React|Node.js|Docker|Git|GitHub|Java|C++|Rust|Go/Golang|'
+           'Postgres|Linux|Visual Studio Code|HTML5|CSS|Vue.js|Ubuntu|Kubernetes|'
+           'Markdown|Next.js|TailwindCSS|Figma|MySQL|Redis|NumPy|Pandas|Vite|Django|'
+           'GitHub Actions|Spring|Arch|SQLite|Blender|JSON').split('|')
 SUPPLEMENT = (
     ('SQL', 'Databases', '4479A1', '', 'white'),
     ('Tkinter', 'Frameworks & Libraries', '3776AB', 'python', 'white'),
